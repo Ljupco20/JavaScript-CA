@@ -4,32 +4,35 @@ let prize = prompt("Choose a number between 0 and 10");
 prize = Number(prize);
 console.log(prize);
 
-let message = "I can say ";
-let retVal = "";
+let message = "My selection: ";
 
 switch (prize) {
+  case 0:
   case 1:
-    retVal = "u r the best!";
+    message = message + "coins";
     break;
   case 2:
-    retVal = "u were so close";
-    break;
   case 3:
-    retVal = "Top 3 is still good";
+    message += "bear";
     break;
   case 4:
-    retVal = "u r in Chapmions League last qualifing place";
-    break;
   case 5:
   case 6:
-    retVal = "Europa League Conference is still good";
+    message = message + "lollipop";
     break;
   case 7:
+    message = message + "rabbit";
+    break;
   case 8:
+    message = message + "bottle";
+    break;
   case 9:
   case 10:
-    retVal = "u r still in top half of the league";
+    message = message + "keychain";
+    break;
+  default:
+    message = "You selected wrong number!";
     break;
 }
 console.log("-----------------------------");
-console.log(`${message} ${retVal}`);
+alert(message);
