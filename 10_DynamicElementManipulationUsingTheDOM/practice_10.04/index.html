@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10_03_DynamicElementManipulationUsingTheDOM</title>
+</head>
+
+<body>
+
+  <div id="one" onclick="alert('Ouch! Stop it')">one Don't click me!</div>
+  <div id="two" onclick="stop()">two Don't click me!</div>
+  <div id="three" onclick="stop2()">three Don't click me!</div>
+  <div id="four">four Don't click me!</div>
+
+  <button onclick="reveal(this)">Click me</button>
+</body>
+<script src="./main.js"></script>
+
+</html>

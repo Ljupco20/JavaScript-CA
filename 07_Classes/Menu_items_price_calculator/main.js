@@ -1,21 +1,30 @@
 "use strict";
 
-class MenuPrice {
-  #item1 = 2;
-  #item2 = 5;
-  constructor(amount1, amount2) {
-    this.amount1 = amount1;
-    this.amount2 = amount2;
+class MenuItems {
+  #burger = 180;
+  #pizza = 230;
+  constructor(amountOfBurgers, amountOfPizzas) {
+    this.amountOfBurgers = amountOfBurgers;
+    this.amountOfPizzas = amountOfPizzas;
   }
-  mixIngredients() {
-    return this.amount1 * this.#item1 + this.amount2 * this.#item2;
+  calculatePrice() {
+    return (
+      this.amountOfBurgers * this.#burger + this.amountOfPizzas * this.#pizza
+    );
   }
-  get mix() {
-    return this.mixIngredients();
+  get getPrice() {
+    return this.calculatePrice();
   }
 }
 
-let pizzaMenu = new MenuPrice(5, 7);
-let burgerMenu = new MenuPrice(10, 20);
-console.log(pizzaMenu.mix);
-console.log(burgerMenu.mix);
+let order1 = new MenuItems(6, 2);
+let order2 = new MenuItems(4, 1);
+let order3 = new MenuItems(1, 2);
+
+console.log(`Total price of first order ${order1.getPrice} den`);
+console.log(`Total price of second order ${order2.getPrice} den`);
+console.log(`Total price of third order ${order3.getPrice} den`);
+
+let arrOfPrices = [];
+arrOfPrices.push(order1, order2, order3);
+console.log(arrOfPrices);
