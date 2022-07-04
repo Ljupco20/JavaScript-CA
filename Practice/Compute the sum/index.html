@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript program to compute the sum of three elements of an given integers of length 3.
+
+  </title>
+</head>
+
+<body>
+  <h2>The sum is:</h2>
+  <ol id="sumOfNumbers">
+
+  </ol>
+
+
+  <script>
+    let sumList = document.getElementById("sumOfNumbers");
+
+    function simpleSum(num1, num2, num3) {
+      let result = num1 + num2 + num3;
+      sumList.innerHTML += `<li>${num1} + ${num2} + ${num3} = ${result}</li>`;
+    }
+    simpleSum(13, 33, 5);
+    simpleSum(5, 10, 5);
+
+
+    function arraySum(arr) {
+      let result = 0;
+      let showNumbers = "";
+      console.log(typeof arr);
+      if (typeof arr === "object") {
+        for (let i = 0; i < arr.length; i++) {
+          const element = arr[i];
+          result += element;
+          if (i === arr.length - 1) {
+            showNumbers += `${element}`;
+          } else {
+            showNumbers += `${element} + `;
+          }
+
+        }
+        sumList.innerHTML += `<li>${showNumbers} = ${result}</li>`;
+      }
+    }
+
+    myArr = [50, 50, 20];
+    arraySum(myArr);
+    arraySum([5, 12, 4, 35, 22]);
+    arraySum(12, 4, 35);
+    arraySum([5, 10, 10, 35, 20]);
+
+
+  </script>
+</body>
+
+</html>

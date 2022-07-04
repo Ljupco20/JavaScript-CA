@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript program to concatenate two strings except their first character</title>
+</head>
+
+<body>
+  <h2>Concatenate two strings Except their first character</h2>
+  <ul id="showString">
+
+  </ul>
+
+  <h2>Concatenate two strings Except their first character</h2>
+  <ul id="showString2">
+
+  </ul>
+  <script>
+    let stringList = document.getElementById("showString");
+    let stringList2 = document.getElementById("showString2");
+
+    function concatStringsWithoutFirstChar(string1 = "", string2) {
+      if (typeof string1 === "string" && typeof string2 === "string") {
+
+
+        let str1 = string1.substring(1);
+        let str2 = string2.substring(1);
+        let concatStr = str1 + str2;
+        stringList.innerHTML += `<li>${string1} + ${string2} = ${concatStr}</li>`;
+      }
+    }
+    concatStringsWithoutFirstChar("Ljupco", "Trajanovski");
+    concatStringsWithoutFirstChar("Car", "Plain");
+    concatStringsWithoutFirstChar(5, true);
+    concatStringsWithoutFirstChar("Apple", "Banana");
+
+    function concatStringsWithoutLasttChar(string1 = "", string2) {
+      if (typeof string1 === "string" && typeof string2 === "string") {
+
+
+        let str1 = string1.substring(0, string1.length - 1);
+        let str2 = string2.substring(0, string2.length - 1);
+        let concatStr = str1 + str2;
+        stringList2.innerHTML += `<li>${string1} + ${string2} = ${concatStr}</li>`;
+      }
+    }
+
+    concatStringsWithoutLasttChar("Car", "Dog");
+    concatStringsWithoutLasttChar("Car", "Plain");
+    concatStringsWithoutLasttChar("Apple", "Banana");
+
+  </script>
+</body>
+
+</html>

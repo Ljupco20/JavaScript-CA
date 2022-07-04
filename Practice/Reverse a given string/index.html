@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript program to reverse a given string</title>
+</head>
+
+<body>
+  <div id="main">
+    <h2>Reversed string:</h2>
+
+
+  </div>
+
+  <script>
+
+    let main = document.getElementById("main");
+
+    function reverseString(str = "") {
+      let revString = "";
+      let isPolindrom = false;
+
+      for (let i = str.length - 1; i >= 0; i--) {
+        const element = str[i];
+        revString += element;
+
+      }
+      isPolindrom = str === revString;
+      main.innerHTML += `<p>${str} = ${revString} | Is Polindrom = ${isPolindrom}</p>`;
+    }
+
+    reverseString("Dog");
+    reverseString("Plain");
+    reverseString("madam");
+  </script>
+
+</body>
+
+</html>

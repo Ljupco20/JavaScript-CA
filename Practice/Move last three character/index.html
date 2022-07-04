@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript program to move last three character to the start of a
+    given string. The string length must be 3.</title>
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+  <h2>Show edited string:</h2>
+  <table id="showString" class="table table-striped">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Original string</th>
+      <th scope="col">Edited string</th>
+    </tr>
+    <!-- <tr>
+      <th scope="row">1</th>
+      <td>Education</td>
+      <td>ionEducat</td>
+    </tr> -->
+  </table>
+
+  <script>
+    let myTable = document.getElementById("showString");
+    let counter = 1;
+    function addRow(orgString, editString) {
+      let row = document.createElement("tr");
+
+      let rowHeader = document.createElement("th");
+      rowHeader.setAttribute("scope", "row")
+      rowHeader.innerHTML = counter;
+      counter++;
+
+      let rowOrigString = document.createElement("td");
+      rowOrigString.innerHTML = orgString;
+
+      let rowEditString = document.createElement("td");
+      rowEditString.innerHTML = editString;
+
+
+      row.appendChild(rowHeader);
+      row.appendChild(rowOrigString);
+      row.appendChild(rowEditString);
+
+      myTable.appendChild(row);
+
+    }
+    function moveCharacters(str = "") {
+      if (str.length >= 3) {
+
+        let editString = str.slice(str.length - 3) + str.slice(0, str.length - 3);
+        addRow(str, editString)
+      }
+    }
+
+    // addRow("string1", "string2");
+    moveCharacters("string1");
+    moveCharacters("strING");
+    moveCharacters("Educataion");
+
+  </script>
+</body>
+
+</html>

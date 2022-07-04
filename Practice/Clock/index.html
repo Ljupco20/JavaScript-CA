@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <style>
+    #hours {
+      font-size: 5rem;
+      color: brown;
+    }
+
+    #minutes {
+      font-size: 4.5rem;
+      color: chocolate;
+    }
+
+    #seconds {
+      font-size: 4rem;
+      color: red;
+    }
+
+    p {
+      font-size: 3rem;
+      color: crimson;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 class="text-center">Clock</h2>
+  <p class="text-center my-3">
+    <span id="hours">19</span> :
+    <span id="minutes">23</span> :
+    <span id="seconds">12</span>
+
+    <script>
+      setInterval(function () {
+        let date = new Date();
+        document.getElementById("hours").innerText = getTime(date.getHours());
+        document.getElementById("minutes").innerText = getTime(date.getMinutes());
+        document.getElementById("seconds").innerText = getTime(date.getSeconds());
+      }, 1000
+
+      )
+
+
+      function getTime(params) {
+        console.log(typeof params, params);
+        let time = "";
+        if (params < 10) {
+          time = "0" + params;
+        } else {
+          time = params;
+        }
+        return time;
+      }
+
+    </script>
+</body>
+
+</html>
